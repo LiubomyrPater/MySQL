@@ -1,0 +1,98 @@
+use library;
+DROP TABLE IF EXISTS book;
+CREATE TABLE book(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(120) NOT NULL,
+    price DOUBLE NOT NULL,
+    description TINYTEXT,
+    date_of_publication DATE NOT NULL DEFAULT '2020-01-01', #date
+    category VARCHAR(30) NOT NULL,
+    isbn VARCHAR(20) NOT NULL UNIQUE,
+    number_of_pages INT NOT NULL,
+    authors_name VARCHAR(45) NOT NULL,
+    authors_surname VARCHAR(45) NOT NULL,
+    authors_email VARCHAR(50) NOT NULL UNIQUE,
+	authors_age TINYINT NOT NULL,
+    authors_date_of_birth VARCHAR(10) NOT NULL,
+    authors_awards VARCHAR(120)
+    );
+
+INSERT INTO book (name, price, date_of_publication, category, isbn, number_of_pages, authors_name,
+				authors_surname, authors_email, authors_age, authors_date_of_birth, authors_awards)
+VALUES
+('Fahrenheit 451', 6.99, '1953-10-19', 'dystopian', '0-345-34296-8', 179, 'Ray', 'Bradbury', 'r_bradbury@gmail.com', 91, '1920-08-22', DEFAULT),
+('Hjkk', 200.4444, '2012-01-01', 'drama', '0-346-34296-8', 354, 'Bill', 'Derkach', '5545@email', 55, '1965-08-22','oiewuroiewur'),
+('YFFS', 149.55555, '2014-01-01', 'novel', '0-534-34296-8', 400, 'Tom', 'Bozhyk', '55768@email', 60, '1960-08-22', DEFAULT),
+('Oi iuy', 123.8, '2015-01-01', 'poetry', '0-967-34296-8', 700, 'Oleh', 'Chaikovskyi', '1435@email', 61, '1959-08-22', DEFAULT),
+('Sdff', 100.4444, '2011-01-01', 'drama', '0-327-34296-8', 280, 'John', 'Hrytsenko', '6768@email', 53, '1967-08-22', DEFAULT),
+('Asd df', 1233, '2018-01-01', 'utopian', '0-956-34296-8', 850, 'Ivan', 'Sokil', '32768@email', 23, '1997-08-22', DEFAULT),
+('Mnbv', 203.4444, '2019-01-01', 'dystopian', '0-934-34296-8', 60, 'Sam', 'Shpak', '3254567@email', 45, '1975-08-22', DEFAULT),
+('OII UY', 123, '2013-01-01', 'comedy', '0-037-34296-8', 63, 'Yuriy', 'Rodin', '2432463@email', 33, '1987-08-22', 'ksajldjlsa'),
+('Dfgg', 223, '2012-01-01', 'poetry', '0-045-34296-8', 280, 'Vasyl', 'Voyevoda', '6576980543@email', 27, '1993-08-22', DEFAULT),
+('ASDFG', 223, '2019-01-01', 'novel', '0-563-34296-8', 70, 'Oksana', 'Pistol', '12323@email', 67, '1953-08-22', DEFAULT),
+('CVV BNB', 126, '2010-01-01', 'drama', '0-132-34296-8', 400, 'Yuliya', 'Skliar', '7657@email', 37, '1983-08-22', DEFAULT),
+('ZXCVB', 154, '2016-01-01', 'utopian', '0-664-34296-8', 353, 'Iryna', 'Yurchenko', '74@email', 34, '1986-08-22', DEFAULT),
+('ASSDD', 156, '2018-01-01', 'comedy', '0-996-34296-8', 646, 'Agata', 'Ivanova', '324645@email', 64, '1956-08-22', DEFAULT),
+('OO IIKN', 234, '2000-01-01', 'novel', '0-005-34296-8', 354, 'Shon', 'Karpovych', '787093@email', 30, '1990-08-22', DEFAULT),
+('YYFF', 231, '2020-01-11', 'poetry', '0-223-34296-8', 283, 'Lyuk', 'Shvets', '213@email', 34, '1986-08-22', DEFAULT),
+('MNJHF', 234, '2020-01-21', 'drama', '0-888-34296-8', 354, 'Benedykt', 'Fedotov', '765721@email', 50, '1970-08-22', DEFAULT),
+('IYYGFF', 342, '2000-01-01', 'dystopian', '0-744-34296-8', 653, 'Frantsysk', 'Husakov', '76986@email', 56, '1964-08-22', DEFAULT),
+('IJ NHG', 123, '2010-01-01', 'comedy', '0-944-34296-8', 364, 'Karl', 'Syrota', '987324@email', 80, '1940-08-22', DEFAULT),
+('MMN B FD', 236, '1999-01-01', 'utopian', '0-773-34296-8', 465, 'Melani', 'Savchuk', '97743@email', 62, '1958-08-22', DEFAULT),
+('OIU FRRD', 235, '2010-01-01', 'drama', '0-995-34809-8', 640, 'Sofiya', 'Slynko', '977432@email', 32, '1988-08-22', DEFAULT),
+('RFFFCV hj', 345, '2010-01-01', 'novel', '0-662-34296-8', 536, 'Natali', 'Mukhina', '867632@email', 54, '1966-08-22', DEFAULT),
+('KMNJ f', 235, '2020-02-01', 'dystopian', '0-332-34296-8', 150, 'Mariya', 'Safronova', '32864@email', 57, '1963-08-22', DEFAULT),
+('ERD FC', 456, '2020-01-19', 'novel', '0-995-34296-8', 160, 'Tetiana', 'Astakhova', '6623435@email', 62, '1958-08-22', DEFAULT),
+('EDDC', 324, '2020-01-12', 'drama', '0-332-37696-8', 350, 'Olha', 'Palamarchuk', '6058703@email', 41, '1979-08-22', DEFAULT),
+('WS SXDC G', 256, '2020-03-01', 'poetry', '0-345-88596-8', 364, 'Victoriya', 'Sokolova', '3475633249@email', 53, '1967-08-22', 'hdasjkda');
+
+
+SELECT * FROM book;
+SELECT name FROM book;
+SELECT * FROM book WHERE id = 5 || id = 10 || id = 13 ;    
+SELECT * FROM book WHERE number_of_pages > 150;
+SELECT * FROM book WHERE authors_age > 30;    
+SELECT * FROM book WHERE authors_awards IS NULL;
+SELECT * FROM book WHERE authors_email = 'r_bradbury@gmail.com';
+SELECT * FROM book WHERE isbn = '0-664-34296-8';
+SELECT * FROM book WHERE category = 'dystopian';
+SELECT * FROM book WHERE number_of_pages > 200 AND authors_age > 25;
+SELECT * FROM book WHERE category = 'comedy' OR category = 'drama';
+SELECT * FROM book ORDER BY name;
+SELECT * FROM book ORDER BY authors_email;
+SELECT * FROM book ORDER BY number_of_pages DESC;
+SELECT DISTINCT category FROM book;
+SELECT DISTINCT authors_name FROM book;
+SELECT * FROM book WHERE date_of_publication > '2000-01-01';
+SELECT * FROM book WHERE date_of_publication < '2010-01-01';
+
+SET sql_safe_updates=0;##########################################################
+UPDATE book SET authors_surname = 'New surname' WHERE id = '5';
+UPDATE book SET authors_surname = 'New surname' WHERE id IN(3,4);
+SET sql_safe_updates=1;##########################################################
+SELECT count(*) FROM book WHERE authors_awards IS NOT NULL; 
+SELECT id, name, price, date_of_publication, category, isbn, number_of_pages, authors_name,	authors_surname, 
+	authors_email, authors_age, authors_date_of_birth, authors_awards FROM book  WHERE number_of_pages = 
+	(SELECT MIN(number_of_pages) FROM book);
+SELECT max(number_of_pages) FROM book;
+SELECT round(avg(price), 2) FROM book;
+SELECT category, count(*) FROM book GROUP BY category; 
+SELECT min(price) FROM book;
+SELECT id, name, price, date_of_publication, category, isbn, number_of_pages, authors_name, authors_surname, 
+	authors_email, authors_age, authors_date_of_birth, authors_awards FROM book  WHERE price = 
+	(SELECT MIN(price) FROM book);
+SELECT * FROM book WHERE price LIKE '%.____' ORDER BY name;
+SELECT * FROM book LIMIT 5, 5;# вивести книжки за limit (5, 5), (10, 6) та відсортувати за датою публікації#####################################
+SELECT * FROM book WHERE name LIKE '% %' ORDER BY name;
+SELECT * FROM book WHERE name LIKE '% % %' ORDER BY name;
+SELECT * FROM book WHERE authors_name LIKE 'ray' ORDER BY name;
+SELECT * FROM book WHERE price BETWEEN 50 AND 120;
+SELECT * FROM book WHERE price NOT BETWEEN 200 AND 600;
+###########################################
+DELETE FROM book WHERE id = 8;
+SET sql_safe_updates=0;
+DELETE FROM book WHERE name = 'Dfgg';
+SET sql_safe_updates=1;
+DELETE FROM book WHERE isbn = '0-345-88596-8';
+SET sql_safe_updates=1;
+###########################################
